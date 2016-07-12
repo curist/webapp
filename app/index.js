@@ -11,9 +11,8 @@ function mountApplication() {
 }
 
 function init() {
-  require('app/style.css');
+  require('app/styles/style.less');
   require('app/actions');
-  require('app/firebase');
 
   mountApplication();
 }

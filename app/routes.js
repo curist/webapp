@@ -18,7 +18,7 @@ export function bindRoutes(el) {
 
 function wrapRoutes(routes) {
   let wrappedRoutes = Object.keys(routes).reduce((r, k) => {
-    r[k] = m(Layout, {}, routes[k]);
+    r[k] = m(Layout, {component: routes[k]});
     return r;
   }, {});
   return wrappedRoutes;

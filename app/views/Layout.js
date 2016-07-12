@@ -1,7 +1,14 @@
 import m from 'mithril';
 
-import UserStatus from 'app/views/UserStatus';
-import { BindData } from 'app/utils';
+import { BindData } from 'app/db';
+
+function UserStatus(user) {
+  if(user) {
+    return m('p', 'signed in');
+  } else {
+    return m('p', 'not login');
+  }
+}
 
 const Layout = {
   controller () {
@@ -11,17 +18,12 @@ const Layout = {
       user: ['user']
     });
   },
-  view (ctrl, args, component) {
+  view (ctrl, args) {
+    const { component } = args;
     const user = ctrl.data.user;
     return m('div', [
-      m(UserStatus),
-      (() => {
-        if(user) {
-          return m(component);
-        } else {
-          return m('span', '^ please login first');
-        }
-      })()
+      UserStatus(user),
+      m(component),
     ]);
   }
 };
