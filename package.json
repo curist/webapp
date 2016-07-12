@@ -1,7 +1,7 @@
 {
   "scripts": {
-    "start": "webpack-dev-server --progress --colors --hot --inline --config ./webpack.config.js",
-    "build": "webpack -p --config ./webpack.build.js"
+    "start": "webpack-dev-server --progress --colors --hot --inline --config ./webpack/webpack.config.js",
+    "build": "webpack -p --config ./webpack/webpack.build.js"
   },
   "devDependencies": {
     "autoprefixer": "^6.3.6",

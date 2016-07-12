@@ -5,7 +5,6 @@ module.exports = {
     "es6": true
   },
   "globals": {
-    "firebase": true,
   },
   "extends": "eslint:recommended",
   "parserOptions": {
@@ -22,7 +21,8 @@ module.exports = {
     ],
     "quotes": [
       "error",
-      "single"
+      "single",
+      {"allowTemplateLiterals": true}
     ],
     "semi": [
       "error",
@@ -31,6 +31,9 @@ module.exports = {
     "comma-dangle": [
       "error",
       "only-multiline"
+    ],
+    "no-unused-vars": [
+      "off"
     ]
   }
 };
