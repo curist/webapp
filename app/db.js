@@ -23,9 +23,10 @@ export function BindData(controller, bindings) {
 
   let watcher = controller._w = db.watch(bindings);
   let callback = _.debounce((e) => {
+    m.startComputation();
     const data = e.target.get();
     controller.data = data;
-    requestAnimationFrame(m.redraw.bind(m));
+    m.endComputation();
   }, 20);
   watcher.on('update', callback);
   // register onunload after inited component
