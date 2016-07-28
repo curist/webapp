@@ -22,9 +22,21 @@ export function BindData(controller, bindings) {
   });
 
   let watcher = controller._w = db.watch(bindings);
-  watcher.on('update', e => {
+  let callback = _.debounce((e) => {
     const data = e.target.get();
     controller.data = data;
-    m.redraw();
+    requestAnimationFrame(m.redraw.bind(m));
+  }, 20);
+  watcher.on('update', callback);
+  // register onunload after inited component
+  // so we can avoid override existing onunload callback
+  requestAnimationFrame(() => {
+    controller.onunload = (function (origOnunload) {
+      origOnunload = (origOnunload || function(){}).bind(controller);
+      return () => {
+        watcher.off('update');
+        origOnunload();
+      };
+    })(controller.onunload);
   });
-}
+};
