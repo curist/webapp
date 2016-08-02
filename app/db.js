@@ -12,6 +12,10 @@ const db = new Baobab({
 
 export default db;
 
+if(module.hot) {
+  window.db = db;
+}
+
 export function BindData(controller, bindings) {
   controller.data = {};
 
@@ -32,7 +36,7 @@ export function BindData(controller, bindings) {
   watcher.on('update', callback);
   // register onunload after inited component
   // so we can avoid override existing onunload callback
-  requestAnimationFrame(() => {
+  setTimeout(() => {
     controller.onunload = (function (origOnunload) {
       origOnunload = (origOnunload || function(){}).bind(controller);
       return () => {
@@ -40,5 +44,5 @@ export function BindData(controller, bindings) {
         origOnunload();
       };
     })(controller.onunload);
-  });
+  }, 0);
 }
