@@ -13,9 +13,6 @@ module.exports = {
     path: 'build',
     filename: 'bundle.js'
   },
-  devServer: {
-    contentBase: 'build'
-  },
   resolve: {
     alias: {
       app: path.join(__dirname, '..', 'app')
