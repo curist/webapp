@@ -1,3 +1,4 @@
+import _ from 'underscore';
 import m from 'mithril';
 import Baobab from 'baobab';
 const db = new Baobab({
@@ -40,4 +41,4 @@ export function BindData(controller, bindings) {
       };
     })(controller.onunload);
   });
-};
+}
