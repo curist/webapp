@@ -10,22 +10,24 @@ function UserStatus(user) {
   }
 }
 
-const Layout = {
-  controller () {
-    const ctrl = this;
+function Layout(component) {
+  return {
+    oninit () {
+      const ctrl = this;
 
-    BindData(ctrl , {
-      user: ['user']
-    });
-  },
-  view (ctrl, args) {
-    const { component } = args;
-    const user = ctrl.data.user;
-    return m('div', [
-      UserStatus(user),
-      m(component),
-    ]);
-  }
-};
+      BindData(ctrl , {
+        user: ['user']
+      });
+    },
+    view (vnode) {
+      const ctrl = this;
+      const user = ctrl.data.user;
+      return m('div', [
+        UserStatus(user),
+        m(component),
+      ]);
+    }
+  };
+}
 
 export default Layout;
