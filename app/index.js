@@ -7,7 +7,7 @@ import 'normalize.css';
 function mountApplication() {
   const el = document.getElementById('app');
   bindRoutes(el);
-  m.route.set(m.route.get());
+  m.route(m.route());
 }
 
 function init() {

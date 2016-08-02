@@ -25,7 +25,7 @@
   },
   "dependencies": {
     "baobab": "^2.3.3",
-    "mithril": "github:lhorie/mithril.js#rewrite",
+    "mithril": "^0.2.5",
     "normalize.css": "^4.1.1",
     "underscore": "^1.8.3"
   }

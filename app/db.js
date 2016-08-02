@@ -12,10 +12,6 @@ const db = new Baobab({
 
 export default db;
 
-if(module.hot) {
-  window.db = db;
-}
-
 export function BindData(controller, bindings) {
   controller.data = {};
 
