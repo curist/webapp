@@ -27,7 +27,7 @@ npm run build
 
 We are using flux-alike architecture, views can emit events, ask to do actions, and only actions can actually alter db states.
 
-Views use utils.BindData to get informed data updates.
+Views use db.BindData to get informed data updates.
 
     [View] (mithril component) <------------------\
              |                                    |
