@@ -1,7 +1,6 @@
 var webpack = require('webpack');
 var path = require('path');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
-var precss = require('precss');
 var autoprefixer = require('autoprefixer');
 
 module.exports = {
@@ -51,7 +50,7 @@ module.exports = {
     configFile: './webpack/eslintrc.js'
   },
   postcss: function() {
-    return [precss, autoprefixer];
+    return [autoprefixer];
   },
   plugins: [
     new webpack.DefinePlugin({

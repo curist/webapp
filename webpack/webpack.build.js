@@ -4,7 +4,6 @@ var path = require('path');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
-var precss = require('precss');
 var autoprefixer = require('autoprefixer');
 
 module.exports = {
@@ -40,7 +39,7 @@ module.exports = {
     ]
   },
   postcss: function() {
-    return [precss, autoprefixer];
+    return [autoprefixer];
   },
   plugins: [
     new HtmlWebpackPlugin({
