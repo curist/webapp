@@ -33,7 +33,7 @@ module.exports = {
         loader: 'babel',
         query: {
           presets: ['es2015'],
-          plugins: ['transform-runtime']
+          plugins: ['transform-runtime', 'transform-flow-strip-types']
         }
       }
     ]

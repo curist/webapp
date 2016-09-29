@@ -1,9 +1,13 @@
+// @flow weak
 // our central events broker
 import EventEmitter from 'events';
 
 const debug = require('debug')('app/broker');
 
+
 class Broker extends EventEmitter {
+  count: number;
+
   constructor () {
     super();
     this.count = 0;

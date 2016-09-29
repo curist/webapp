@@ -2,6 +2,7 @@ var webpack = require('webpack');
 var path = require('path');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var autoprefixer = require('autoprefixer');
+var FlowtypePlugin = require('flowtype-loader/plugin');
 
 module.exports = {
   entry: './app/index.js',
@@ -24,6 +25,11 @@ module.exports = {
         test: /\.js$/,
         exclude: /(node_modules|bower_components)/,
         loader: 'eslint',
+      },
+      {
+        test: /\.js$/,
+        exclude: /(node_modules|bower_components)/,
+        loader: 'flowtype',
       }
     ],
     loaders: [
@@ -41,7 +47,7 @@ module.exports = {
         loader: 'babel',
         query: {
           presets: ['es2015'],
-          plugins: ['transform-runtime']
+          plugins: ['transform-runtime', 'transform-flow-strip-types']
         }
       }
     ]
@@ -56,6 +62,7 @@ module.exports = {
     new webpack.DefinePlugin({
       'process.env.DEBUG': '"*"'
     }),
+    new FlowtypePlugin(),
     new HtmlWebpackPlugin({
       title: 'build by webpack @ ' + new Date(),
       hash: true,

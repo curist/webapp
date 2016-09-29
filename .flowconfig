@@ -1,0 +1,11 @@
+[ignore]
+
+[include]
+
+[libs]
+
+[options]
+module.name_mapper='^app\(.*\)$' -> '<PROJECT_ROOT>/app/\1'
+module.name_mapper='^\(.*\)\.css$' -> '<PROJECT_ROOT>/webpack/CSSModule.js.flow'
+module.name_mapper='^\(.*\)\.less$' -> '<PROJECT_ROOT>/webpack/CSSModule.js.flow'
+

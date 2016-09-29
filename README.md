@@ -47,15 +47,15 @@ Views use db.BindData to get informed data updates.
 
 Hot module replacement enabled out of the box.
 
-## modules/plugins
+## key modules/plugins
 
-* precss
-* autoprefixer
-* postcss
-* HtmlWebpackPlugin
-* ExtractTextPlugin: For production build style.css
 * es6 via babel.js
 * eslint
+* [flow][4]
+* less
+* autoprefixer
+* HtmlWebpackPlugin
+* ExtractTextPlugin: For production build style.css
 
 # License
 
@@ -75,3 +75,5 @@ The MIT License (MIT)
 [1]: http://mithril.js.org/
 [2]: https://nodejs.org/api/events.html
 [3]: https://github.com/Yomguithereal/baobab
+
+[4]: https://flowtype.org/docs/getting-started.html
