@@ -56,6 +56,7 @@ Hot module replacement enabled out of the box.
 * autoprefixer
 * HtmlWebpackPlugin
 * ExtractTextPlugin: For production build style.css
+* mocha for testing
 
 # License
 
